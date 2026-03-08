@@ -1,0 +1,23 @@
+{
+  "app.title": "地缘政治情报引擎",
+  "app.subtitle": "分布式概率知识图谱",
+  "nav.feed": "动态",
+  "nav.insights": "洞察",
+  "nav.stats": "统计",
+  "nav.cii": "稳定指数",
+  "nav.markets": "市场",
+  "nav.detail": "详情",
+  "topbar.events": "事件",
+  "topbar.threat": "威胁",
+  "topbar.layers": "图层",
+  "topbar.flights": "航班",
+  "topbar.intel": "情报",
+  "topbar.connected": "已连接",
+  "topbar.disconnected": "已断开",
+  "news.title": "实时新闻动态",
+  "news.breaking": "突发",
+  "news.search": "搜索新闻...",
+  "cii.title": "国家不稳定指数",
+  "finance.title": "市场情报",
+  "layers.title": "数据图层"
+}

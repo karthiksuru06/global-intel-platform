@@ -1,0 +1,40 @@
+{
+    "learner": {
+        "learner_model_param": {
+            "base_score": "0.5"
+        },
+        "gradient_booster": {
+            "model": {
+                "trees": [
+                    {
+                        "split_indices": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "split_conditions": [
+                            0.5,
+                            2.0,
+                            -2.0
+                        ],
+                        "left_children": [
+                            1,
+                            -1,
+                            -1
+                        ],
+                        "right_children": [
+                            2,
+                            -1,
+                            -1
+                        ],
+                        "default_left": [
+                            1,
+                            0,
+                            0
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

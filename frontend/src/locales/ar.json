@@ -1,0 +1,23 @@
+{
+  "app.title": "محرك الاستخبارات الجيوسياسية",
+  "app.subtitle": "رسم بياني معرفي احتمالي موزع",
+  "nav.feed": "تغذية",
+  "nav.insights": "تحليلات",
+  "nav.stats": "إحصائيات",
+  "nav.cii": "مؤشر",
+  "nav.markets": "أسواق",
+  "nav.detail": "تفاصيل",
+  "topbar.events": "أحداث",
+  "topbar.threat": "تهديد",
+  "topbar.layers": "طبقات",
+  "topbar.flights": "رحلات",
+  "topbar.intel": "استخبارات",
+  "topbar.connected": "متصل",
+  "topbar.disconnected": "غير متصل",
+  "news.title": "آخر الأخبار مباشرة",
+  "news.breaking": "عاجل",
+  "news.search": "بحث في الأخبار...",
+  "cii.title": "مؤشر عدم الاستقرار القطري",
+  "finance.title": "استخبارات السوق",
+  "layers.title": "طبقات البيانات"
+}

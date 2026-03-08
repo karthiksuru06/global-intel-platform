@@ -1,0 +1,25 @@
+{
+  "name": "Global Intelligence Platform",
+  "short_name": "GIP",
+  "description": "Distributed Probabilistic Knowledge Graph — Real-time Geopolitical Intelligence Engine",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05050a",
+  "theme_color": "#00e5ff",
+  "orientation": "landscape",
+  "categories": ["news", "security", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

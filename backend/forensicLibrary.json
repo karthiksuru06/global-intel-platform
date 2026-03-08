@@ -1,0 +1,182 @@
+{
+    "Fuzzers": {
+        "reasoning": "High-frequency anomalous payloads detected targeting input validation layers.",
+        "summary": "Automated injection of invalid or random data into application inputs to identifying vulnerabilities.",
+        "remediation": [
+            "Implement strict input validation and sanitization on all entry points.",
+            "Deploy rate limiting and WAF rules to block repetitive malformed requests.",
+            "Patch identified fuzzing targets and handle exceptions gracefully."
+        ]
+    },
+    "Fuzzers-HTTP": {
+        "reasoning": "Volume of 400/500 series errors with malformed HTTP headers.",
+        "summary": "HTTP-specific fuzzing attack attempting to crash web services or map API structures.",
+        "remediation": [
+            "Configure WAF to drop requests with non-compliant HTTP headers.",
+            "Limit request body size and analyze logs for pattern anomalies.",
+            "Ensure error messages do not leak stack traces."
+        ]
+    },
+    "Backdoor": {
+        "reasoning": "Persistent unauthorized access detected via abnormal outbound connections.",
+        "summary": "A hidden mechanism bypassing standard authentication to grant persistent remote access.",
+        "remediation": [
+            "Isolate the infected host immediately from the network.",
+            "Identify and remove the backdoor binary/script and persistence mechanisms.",
+            "Reset all compromised credentials and review access logs."
+        ]
+    },
+    "DoS": {
+        "reasoning": "Traffic volume spike identified correlating with service degradation.",
+        "summary": "Denial of Service attempt aiming to exhaust system resources (CPU, Memory, Bandwidth).",
+        "remediation": [
+            "Enable upstream DDoS mitigation services.",
+            "Implement aggressive rate limiting and traffic shaping policies.",
+            "Block source IPs and filter traffic based on signature analysis."
+        ]
+    },
+    "DoS-TCP": {
+        "reasoning": "Excessive half-open connections detected (SYN Flood pattern).",
+        "summary": "TCP state-exhaustion attack holding open connections to consume server resources.",
+        "remediation": [
+            "Enable SYN Cookies on firewalls and load balancers.",
+            "Reduce TCP timeout values to release resources faster.",
+            "Implement connection rate limits per source IP."
+        ]
+    },
+    "Exploits": {
+        "reasoning": "Packet payload matches signature of known CVE exploit.",
+        "summary": "Attempt to leverage a known vulnerability to execute arbitrary code or escalate privileges.",
+        "remediation": [
+            "Identify the vulnerable service and apply critical security patches.",
+            "Enable IPS (Intrusion Prevention System) signatures for known exploits.",
+            "Segment the vulnerable network segment."
+        ]
+    },
+    "Analysis": {
+        "reasoning": "Sequential probing of ports and services detected.",
+        "summary": "Port scanning or web crawling activity indicative of precursor reconnaissance.",
+        "remediation": [
+            "Block scanning source IPs at the perimeter firewall.",
+            "Disable response to ICMP timestamps and other information-leaking probes.",
+            "Review public-facing services for unnecessary open ports."
+        ]
+    },
+    "Reconnaissance": {
+        "reasoning": "System enumeration commands and OS fingerprinting detected.",
+        "summary": "Active gathering of system information to map the attack surface.",
+        "remediation": [
+            "Implement VPN requirements for management interfaces.",
+            "Audit and minimize information leakage in server banners.",
+            "Monitor for slow-scan techniques and correlate with threat feeds."
+        ]
+    },
+    "Shellcode": {
+        "reasoning": "Payload contains machine code (NOP sleds) designed for remote execution.",
+        "summary": "Critical indicator of remote code execution (RCE) attempts via buffer overflow or similar.",
+        "remediation": [
+            "Deploy EDR to block shell execution behavior.",
+            "Utilize memory protection techniques like ASLR and DEP.",
+            "Inspect packet payloads for common shellcode hex patterns."
+        ]
+    },
+    "Worms": {
+        "reasoning": "Self-replicating lateral movement patterns observed on SMB/RPC ports.",
+        "summary": "Malware propagating across the network automatically.",
+        "remediation": [
+            "Isolate infected segments to prevent lateral spread.",
+            "Patch vulnerabilities used for propagation (e.g., SMB).",
+            "Run full-system antivirus scans on all endpoints."
+        ]
+    },
+    "Generic": {
+        "reasoning": "Broad cryptographic primitive mismatch or protocol violation.",
+        "summary": "General anomaly indicative of custom or non-standard attack tools.",
+        "remediation": [
+            "Capture full packet analysis (PCAP) for deep inspection.",
+            "Verify protocol compliance enforcement on firewalls.",
+            "Update IDS/IPS signature databases."
+        ]
+    },
+    "MITM": {
+        "reasoning": "ARP poisoning or invalid SSL certificate chain detected.",
+        "summary": "Man-in-the-Middle attack intercepting communication between two parties.",
+        "remediation": [
+            "Enforce strict HTTPS/HSTS and disable legacy protocols.",
+            "Implement Dynamic ARP Inspection (DAI) on switches.",
+            "Monitor for invalid SSL certificates."
+        ]
+    },
+    "SQL Injection": {
+        "reasoning": "Malicious SQL syntax found in HTTP GET/POST parameters.",
+        "summary": "Injection attempt targeting backend databases via web inputs.",
+        "remediation": [
+            "Use parameterized queries for all database interactions.",
+            "Implement strict input validation and escaping routines.",
+            "Run DAST to identifying injection points."
+        ]
+    },
+    "XSS": {
+        "reasoning": "Script tags or javascript URIs detected in input fields.",
+        "summary": "Cross-Site Scripting attempt injecting malicious scripts into trusted client-side code.",
+        "remediation": [
+            "Implement Content Security Policy (CSP) headers.",
+            "Encode output data contextually.",
+            "Sanitize all user-generated content before rendering."
+        ]
+    },
+    "Brute Force": {
+        "reasoning": "Login failure rate from single source exceeds threshold.",
+        "summary": "Repeated high-frequency login attempts targeting authentication endpoints.",
+        "remediation": [
+            "Implement account lockout policies after N failed attempts.",
+            "Enforce Multi-Factor Authentication (MFA).",
+            "Block IP addresses with high failure rates."
+        ]
+    },
+    "Ransomware": {
+        "reasoning": "Rapid file modification and high entropy I/O detected.",
+        "summary": "Activity consistent with rapid file encryption and mass modification of extensions.",
+        "remediation": [
+            "Immediately sever network connectivity to the affected host.",
+            "Activate incident response plan and restore data from backups.",
+            "Identify the entry vector to prevent reinfection."
+        ]
+    },
+    "Botnet": {
+        "reasoning": "Coordinated communication with known C2 IP addresses.",
+        "summary": "Device participating in DDoS or spam relay via central command.",
+        "remediation": [
+            "Sinkhole DNS requests to known C2 domains.",
+            "Reimage the compromised device.",
+            "Monitor outbound traffic for heartbeat beacons."
+        ]
+    },
+    "Cryptojacking": {
+        "reasoning": "Prolonged CPU usage concurrent with mining pool protocol traffic.",
+        "summary": "Unauthorized use of resources for cryptocurrency mining.",
+        "remediation": [
+            "Block connections to known mining pool IPs.",
+            "Monitor endpoint CPU usage and kill unauthorized processes.",
+            "Deploy policies to block mining scripts."
+        ]
+    },
+    "Data Exfiltration": {
+        "reasoning": "Large outbound data flows over unencrypted channels.",
+        "summary": "Unauthorized transfer of sensitive data via DNS tunneling or direct transfer.",
+        "remediation": [
+            "Implement DLP (Data Loss Prevention) solutions.",
+            "Inspect outbound DNS traffic for tunneling signatures.",
+            "Restrict outbound connectivity."
+        ]
+    },
+    "Analysis-PortScan": {
+        "reasoning": "Sequential connection attempts to range of ports.",
+        "summary": "Classic reconnaissance behavior mapped to port scanning.",
+        "remediation": [
+            "Implement firewalls that drop packets from scanning IPs.",
+            "Use IPS to detect and blocking scanning behavior.",
+            "Ensure all unused ports are closed."
+        ]
+    }
+}

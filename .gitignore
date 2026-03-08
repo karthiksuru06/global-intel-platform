@@ -1,0 +1,43 @@
+# Node.js
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+# (Note: Package lock is usually kept for production, but if the user wants "fresh", I'll keep it for now. Actually, I removed node_modules, but usually one keeps the lock. I'll stick to a standard one.)
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+*.log
+
+# Environment
+.env
+.env.production
+.env.debug
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# MacOS
+.DS_Store
+
+# Miscellaneous
+results/
+chaos/results/
+build_error*.txt
+build.log
