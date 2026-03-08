@@ -1,0 +1,25 @@
+# CodeRabbit Configuration
+# Documentation: https://docs.coderabbit.ai/getting-started/configure-coderabbit
+
+version: "1.0"
+language: "en-US"
+
+# Review settings
+reviews:
+  # Enable/disable high-level summary
+  summary: true
+  # Enable/disable chat instructions
+  chat: true
+  # Auto-approval settings (usually disabled for security)
+  auto_approval: false
+
+# Fine-grained control over files to ignore
+# path_filters:
+#   - "!**/node_modules/**"
+#   - "!**/dist/**"
+#   - "!**/*.log"
+
+# Custom instructions for the AI
+# instructions: |
+#   Please ensure all code follows the "The 5 Golden Rules" as defined in docs/CORE_PHILOSOPHY.md.
+#   Focus on geospatial performance and real-time safety.
